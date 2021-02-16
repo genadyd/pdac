@@ -1,0 +1,17 @@
+{
+    "name": "genady/pdas",
+    "description": "Test image parsing app for P.D.A.C",
+    "require-dev": {
+        "bramus/router": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {"App\\": "src/"}
+    },
+    "authors": [
+        {
+            "name": "genady",
+            "email": "jobgenady@gmail.com"
+        }
+    ],
+    "require": {}
+}

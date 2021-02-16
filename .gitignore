@@ -1,0 +1,6 @@
+.idea
+.vendor
+
+
+# Project exclude paths
+/vendor/
