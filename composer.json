@@ -5,7 +5,7 @@
         "bramus/router": "^1.5"
     },
     "autoload": {
-        "psr-4": {"App\\": "src/"}
+        "psr-4": {"App\\": "../src/"}
     },
     "authors": [
         {
@@ -13,5 +13,7 @@
             "email": "jobgenady@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-pdo": "*"
+    }
 }
