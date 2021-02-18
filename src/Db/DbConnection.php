@@ -10,6 +10,9 @@
 namespace App\Db;
 
 
+use Exception;
+use PDO;
+
 class DbConnection
 {
     private function __construct()
@@ -18,7 +21,7 @@ class DbConnection
 
     private static ?DbConnection $instance = NULL;
 
-    public static function getConnection():?\PDO
+    public static function getConnection():?PDO
     {
         if (is_null(self::$instance)) {
             self::$instance = new self();
@@ -26,7 +29,7 @@ class DbConnection
         return self::$instance->connection();
     }
 
-    private function connection():?\PDO
+    private function connection():?PDO
     {
 
         $db_config = array(
@@ -36,8 +39,8 @@ class DbConnection
             'db_pass'=>'1234'
         );
         try {
-            return new \PDO('mysql:host=' . $db_config['host'] . ';dbname=' . $db_config['db_name'], $db_config['db_user'], $db_config['db_pass']);
-        } catch (\Exception $e) {
+            return new PDO('mysql:host=' . $db_config['host'] . ';dbname=' . $db_config['db_name'], $db_config['db_user'], $db_config['db_pass']);
+        } catch (Exception $e) {
             echo 'Connection failed: ' . $e;
             return NULL;
         }

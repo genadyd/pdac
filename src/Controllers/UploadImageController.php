@@ -10,25 +10,50 @@
 namespace App\Controllers;
 
 
+use App\Models\ImagesModel;
 use App\Validators\ImgValidator;
 
 class UploadImageController
 {
- public function uploadImage(){
-    if(isset($_FILES) && ImgValidator::validator($_FILES)){
-        var_dump($_FILES);
-    }else{
-        header('Location:/');
+    private ImagesModel $image_model;
+
+    public function __construct()
+    {
+        $this->image_model = new ImagesModel();
     }
 
-//     $image_size = getimagesize($_FILES['img']['tmp_name']);
-//     if()
+    public function uploadImage()
+    {
+        if (isset($_FILES) && ImgValidator::validator($_FILES)) {
+            $image_path = $this->saveImage($_FILES);
+            $id = $this->createImageRecording($_FILES ,$image_path);
 
-//     var_dump(getimagesize($_FILES['img']['tmp_name']));
-//     var_dump(filesize($_FILES['img']['tmp_name']));
- }
- private function saveImage(array $img){
+        } else {
+            header('Location:/');
+        }
+    }
 
- }
+    /*
+     * private method saveImage
+     * move uploaded image to "img" directory,
+     * return path to saved image
+     * @param array $img
+     * @return string $image_path
+     * */
+    private function saveImage(array $img): string
+    {
+        return $this->image_model->saveIntoDir($img);
+    }
+
+    /*
+     * private method createImageRecording
+     * save uploaded image into DB,
+     * @params array $img - image data array, string $url -  image url
+     * @return int $new_record_id
+     * */
+    private function createImageRecording(array $img, string $url):int
+    {
+         return $this->image_model->create($img, $url);
+    }
 
 }

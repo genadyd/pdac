@@ -10,6 +10,8 @@
 namespace App\Validators;
 
 
+use App\Traites\ImageDataArrayTrait;
+
 class ImgValidator
 {
     /*
