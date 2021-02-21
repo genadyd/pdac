@@ -1,0 +1,37 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  @import url("https://fonts.googleapis.com/css2?family=Arimo&display=swap"); }
+
+body {
+  font-family: 'Arimo', sans-serif;
+  min-height: 100vh; }
+  body header {
+    height: 60px;
+    border-bottom: solid 1px #9a9a9a;
+    align-items: center;
+    padding: 0 2%;
+    box-sizing: border-box; }
+    body header .logo {
+      font-size: 1.5em;
+      color: coral; }
+    body header nav {
+      width: 20%; }
+      body header nav .menu_element a {
+        text-decoration: none;
+        color: #9a9a9a; }
+      body header nav .menu_element.current a {
+        color: #6f6e6e;
+        text-decoration: underline; }
+  body .flex {
+    display: flex; }
+  body .j-content-between {
+    justify-content: space-between; }
+  body .j-content-around {
+    justify-content: space-around; }
+  body .j-content-center {
+    justify-content: center; }
+  body .d-column {
+    flex-direction: column; }
+
+/*# sourceMappingURL=main_styles.css.map */

@@ -41,7 +41,7 @@ class ImagesModel extends MainAbstractModel
     }
 
     /**
-     * public method create make new record in db
+     * public method create - make new record in db
      * @table images
      * @param array $img
      * @param string $image_url

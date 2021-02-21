@@ -58,7 +58,6 @@ class ImagesColorsModel extends MainAbstractModel
               0.299*($r*$r) + 0.587*($g*$g) + 0.144*($b*$b)
             );
             $colors_array[$key]['is_dark'] = $res_num<=127.5;
-//            $colors_array[$key]['is_dark'] = $res_num;
         }
 
     }
