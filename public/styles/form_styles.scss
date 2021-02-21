@@ -8,14 +8,15 @@
     padding: 1em 0;
     box-sizing: border-box;
     label{
-      height: 2.4em;
+      height: 2.6em;
       border: solid 1px #9a9a9a;
       border-radius: 6px;
       cursor: pointer;
-      line-height: 2.4em;
+      line-height: 2.6em;
       text-align: center;
       background-color: #3e3ee8;
       color: #fff;
+      font-size: 1.2em;
       &:hover{
         background-color: #6868f1;
       }
@@ -33,7 +34,13 @@
     }
     input[type=submit]{
       height: 2.4em;
-      font-size: 1em;
+      font-size: 1.2em;
+      width: 50%;
+      background-color: green;
+      color: #fff;
+      border: solid 1px #9a9a9a;
+      border-radius: 6px;
+      cursor: pointer;
 
     }
   }
